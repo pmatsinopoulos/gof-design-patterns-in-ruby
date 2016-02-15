@@ -1,0 +1,2 @@
+class MySubclassSingleton < MySingleton
+end
