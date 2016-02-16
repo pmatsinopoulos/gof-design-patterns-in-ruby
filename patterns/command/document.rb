@@ -6,6 +6,9 @@ class Document
   def open
   end
 
+  def paste
+  end
+
   attr_accessor :name
   private(:name=, :name)
 end
