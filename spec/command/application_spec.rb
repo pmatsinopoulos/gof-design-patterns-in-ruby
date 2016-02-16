@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Application do
   describe '#add' do
     it 'adds a document to the list of documents' do
-      document = Document.new
+      document = Document.new('foo')
 
       # fire
       subject.add(document)
