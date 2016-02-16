@@ -95,5 +95,10 @@ RSpec.configure do |config|
 =end
 end
 
-Dir.glob(File.expand_path('..', __FILE__) + '/../patterns/**').each {|dir| $: << dir}
-Dir.glob(File.expand_path('..', __FILE__) + '/../patterns/**/*.rb').each {|file| require_relative file}
+['patterns', 'lib'].each do |path_part|
+  current_path = File.expand_path('..', __FILE__)
+  directories = "#{current_path}/../#{path_part}/**"
+  Dir.glob(directories).each {|dir| $: << dir}
+  files = "#{directories}/*.rb"
+  Dir.glob(files).each {|file| require_relative file}
+end
