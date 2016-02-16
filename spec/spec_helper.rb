@@ -97,8 +97,8 @@ end
 
 ['patterns', 'lib'].each do |path_part|
   current_path = File.expand_path('..', __FILE__)
-  directories = "#{current_path}/../#{path_part}/**"
-  Dir.glob(directories).each {|dir| $: << dir}
+  directories = "#{current_path}/../#{path_part}/**/"
+  Dir.glob(directories).each {|dir| $:.push(dir)}
   files = "#{directories}/*.rb"
   Dir.glob(files).each {|file| require_relative file}
 end
